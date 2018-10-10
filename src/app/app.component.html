@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Zipari front end deck of cards application
+  </h1>
+</div>
+<app-filters></app-filters>
+<div class="hand-container">
+    <div *ngFor="let card of deckService.drawnHand" class="card">
+        <app-card-view [card]='card'></app-card-view>
+    </div>
+</div>
+
+    
+
+

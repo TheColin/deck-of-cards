@@ -1,0 +1,31 @@
+<mat-card>
+    <form [formGroup]='filtersForm' class="filters-form" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input matInput type="number" placeholder="Number of cards in the hand" formControlName="numberOfCardsInHand">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="Suits to filter" formControlName="filteredSuits" multiple>
+              <mat-option *ngFor="let suit of suits" [value]="suit">{{suit}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+        <mat-form-field>
+          <mat-select placeholder="Min Value" formControlName="minValue">
+            <mat-option *ngFor="let value of cardValues" [value]="value">{{value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="Max Value" formControlName="maxValue">
+              <mat-option *ngFor="let value of cardValues" [value]="value">{{value}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+          <span *ngIf='filtersForm.errors'>Max can not be less then min</span>
+          <br>
+          <button *ngIf='filtersForm.valid' type="submit">Draw Hand</button>
+      </form>
+</mat-card>
+
+

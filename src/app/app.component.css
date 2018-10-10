@@ -1,0 +1,8 @@
+.hand-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.card {
+    margin: 4px;
+}
